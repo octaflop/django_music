@@ -17,8 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from web_pages.views import basic_web_page
+from web_app.views import basic_web_app, dynamic_web_app
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^pages/$', basic_web_page),  # the web_pages app. We call the view's callable
+    url(r'^pages/$', basic_web_page),  # the web_pages app. We call the view's callable function
+    # the web_app app.
+    url(r'^app/$', basic_web_app),
+    url(r'^app/song/$', dynamic_web_app),
 ]

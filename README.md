@@ -49,8 +49,19 @@ mkvirtualenv djmusic && pip install -r requirements.txt && add2virtualenv `pwd`/
 
 1. `git checkout -b web_page`
 2. `./manage.py startapp web_pages && mv web_pages apps/web_pages`
-3. Edit `apps/django_music/urls.py`
-4. Edit `apps/web_pages/views.py`
-5. Create a templates directory: `mkdir -p apps/web_pages/templates/web_pages/`
-6. Create a template in that directory
-7. Go to the local URL you set, in our case: `localhost:8000/pages/`
+3. Add the app to `INSTALLED_APPS`
+4. Edit `apps/django_music/urls.py`
+5. Edit `apps/web_pages/views.py`
+6. Create a templates directory: `mkdir -p apps/web_pages/templates/web_pages/`
+7. Create a template in that directory
+8. Go to the local URL you set, in our case: `localhost:8000/pages/`
+
+
+## 2. `web_app`
+
+1. Same steps as 1-8 above, substituting `pages` for `app`
+2. Let's edit the view this time. Note that template variables are just python dictionaries.
+3. Also edit the template.
+4. Create a new template and view function: `dynamic.html`.
+5. Add a `<form>` to this template using [django forms](https://docs.djangoproject.com/en/1.11/topics/forms/)
+6. Don't forget about `csrf`!

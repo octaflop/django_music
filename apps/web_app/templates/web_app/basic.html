@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Album List</title>
+  </head>
+  <body>
+    <h2>A basic album list</h2>
+    {% for album in albums %}
+    <h3>{{ album.title }} by {{album.artist }} ({{ album.year }})</h3>
+    <h4>Songs:</h4>
+      <ul>
+      {% for song in album.songs %}
+        <li>
+          {{ song.track }} — {{ song.title }} {% if song.duration %}({{ song.duration }}){% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+  </body>
+</html>

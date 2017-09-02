@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dynamic Song List</title>
+  </head>
+  <body>
+    <h3>Enter your own song!</h3>
+    <form class="song-form" action="." method="post">
+      {% csrf_token %} {# <- a security protection required for all POSTs in django #}
+      {{ form.as_p }}
+      <button type="submit" name="button">
+        Enter Song
+      </button>
+    </form>
+    {% if song %}
+    <h4>Song Entered</h4>
+    {{ song.track }} — {{ song.title }} {% if song.duration %}({{ song.duration }}){% endif %}
+
+    <h4>What Django Sees:</h4>
+    <pre>
+      {{ song }}
+    </pre>
+    {% endif %}
+  </body>
+</html>
