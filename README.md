@@ -14,7 +14,7 @@ The `README.md`, when viewed on github, should guide through each chapter of the
 
 In the `apps` folder, I have separated the following apps:
 
-1. Basic django html pages `web_page`
+1. Basic django html pages `web_pages`
 2. Web Apps `web_app`
 3. Django ORM `web_db`
 4. Web / API Endpoints `web_endpoint`
@@ -40,3 +40,13 @@ The instructions were written for a linux development machine.
 4. Spin up a virtual environment ```mkvirtualenv djmusic && pip install -r requirements.txt && add2virtualenv `pwd`/apps
 ```
 5. Ensure things are working by running `./manage.py runserver` and opening a browser to `localhost:8000`
+
+## 1. `web_pages`
+
+1. `git checkout -b web_page`
+2. `./manage.py startapp web_pages && mv web_pages apps/web_pages`
+3. Edit `apps/django_music/urls.py`
+4. Edit `apps/web_pages/views.py`
+5. Create a templates directory: `mkdir -p apps/web_pages/templates/web_pages/`
+6. Create a template in that directory
+7. Go to the local URL you set, in our case: `localhost:8000/pages/`

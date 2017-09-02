@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from web_pages.views import basic_web_page
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^pages/$', basic_web_page),  # the web_pages app. We call the view's callable
 ]
