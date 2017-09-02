@@ -37,9 +37,13 @@ The instructions were written for a linux development machine.
 1. Install Python & Git
 2. Install virtualenv / pip
 3. Clone the repo `git clone github.com/octaflop/django_music` (or `django-admin.py startproject django_music` for projects from scratch).
-4. Spin up a virtual environment ```mkvirtualenv djmusic && pip install -r requirements.txt && add2virtualenv `pwd`/apps
+4. Spin up a virtual environment:
+
+```bash
+mkvirtualenv djmusic && pip install -r requirements.txt && add2virtualenv `pwd`/apps
 ```
-5. Ensure things are working by running `./manage.py runserver` and opening a browser to `localhost:8000`
+
+* Ensure things are working by running `./manage.py runserver` and opening a browser to `localhost:8000`
 
 ## 1. `web_pages`
 
