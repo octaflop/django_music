@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from web_pages.views import basic_web_page
@@ -25,4 +25,6 @@ urlpatterns = [
     # the web_app app.
     url(r'^app/$', basic_web_app),
     url(r'^app/song/$', dynamic_web_app),
+    # the web_db app. In this case, we'll include instead of specifying each view
+    url(r'^db/', include('web_db.urls', namespace='db')),
 ]

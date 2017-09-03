@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Song {{ song.title }}</title>
+  </head>
+  <body>
+    <h3>{{ song.track }}. {{ song.title }} {% if song.duration %}({{ song.duration }}){% endif %}</h3>
+    <h4>album: <a href="{% url 'db:album-detail' song.album.pk %}">{{ song.album.title }}</a></h4>
+    <a href="{% url 'db:song-list' %}">← back to song list</a>
+  </body>
+</html>

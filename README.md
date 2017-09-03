@@ -65,3 +65,19 @@ mkvirtualenv djmusic && pip install -r requirements.txt && add2virtualenv `pwd`/
 4. Create a new template and view function: `dynamic.html`.
 5. Add a `<form>` to this template using [django forms](https://docs.djangoproject.com/en/1.11/topics/forms/)
 6. Don't forget about `csrf`!
+
+## 3. `web_db`
+
+Now we're going to play with Django's ORM and admin: One of the main selling-points of Django vs other Web Libraries.
+
+1. Repeat steps 1-8 in `web_pages`
+2. Let's create a few DB models in `models.py`
+3. Now we need migrations for them
+  1. We create the migrations with `./manage.py makemigrations web_db`
+  2. And migrate the db with `./manage.py migrate`. Note, this will migrate all apps if you haven't done so already.
+  3. Note, if you're using the repo, that we added a `0002` migration to populate with initial data
+4. We make things easier by using `include` for our URLS and adding our own urls.py definitions in the app, instead of the site.
+5. We also use [Generic Views](https://docs.djangoproject.com/en/1.10/topics/class-based-views/generic-display/) for listing.
+6. And we also add an `admin.py` file for easy management of the DB.
+7. We can visit `localhost:8000/admin` and `localhost:8000/db/songs`; etc for more views.
+8. Because our urls are named, we can use the `{% url %}` django template tag to directly link to a model's page (or the list page).

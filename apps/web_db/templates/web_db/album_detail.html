@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Album {{ album.title }}</title>
+  </head>
+  <body>
+    <h3>{{ album.title }} by {{ album.artist }} ({{ album.year }})</h3>
+    <h4>Songs:</h4>
+      <ul>
+      {% for song in album.song_set.all %}
+        <li>
+          <a href="{% url 'db:song-detail' song.pk %}">{{ song.track }} — {{ song.title }} {% if song.duration %}({{ song.duration }}){% endif %}</a>
+        </li>
+      {% endfor %}
+      </ul>
+      <a href="{% url 'db:album-list' %}">← back to album list</a>
+  </body>
+</html>

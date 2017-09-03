@@ -41,6 +41,7 @@ DJANGO_APPS = [
 OUR_APPS = [
     'web_pages',
     'web_app',
+    'web_db'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + OUR_APPS
