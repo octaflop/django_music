@@ -81,3 +81,16 @@ Now we're going to play with Django's ORM and admin: One of the main selling-poi
 6. And we also add an `admin.py` file for easy management of the DB.
 7. We can visit `localhost:8000/admin` and `localhost:8000/db/songs`; etc for more views.
 8. Because our urls are named, we can use the `{% url %}` django template tag to directly link to a model's page (or the list page).
+
+## 4. `web_endpoint`
+
+Instead of creating new models, we'll use the old ones from `web_db` to create *Endpoints*.
+
+Endpoints are simply api endpoints which can be used by javascript or mobile to make changes to the DB.
+
+1. Spin up `web_endpoints` via `./manage.py startapp web_endpoints` and `mv` it to `apps`
+2. Add `web_endpoints` to our `INSTALLED_APPS` list
+3. Ensure that `[rest_framework](http://www.django-rest-framework.org)` has been added to `INSTALLED_APPS`
+3. Create serializers for our Album and Song models in `web_endpoints/serializers.py`.
+4. We then use ViewSets and Routers to link everything else up.
+5. We will also write a custom creation method for the nested serializer.

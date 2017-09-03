@@ -19,6 +19,10 @@ from django.contrib import admin
 from web_pages.views import basic_web_page
 from web_app.views import basic_web_app, dynamic_web_app
 
+apipatterns = [
+    url(r'^v1/', include('web_endpoints.urls', namespace='v1')),
+]
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^pages/$', basic_web_page),  # the web_pages app. We call the view's callable function
@@ -27,4 +31,6 @@ urlpatterns = [
     url(r'^app/song/$', dynamic_web_app),
     # the web_db app. In this case, we'll include instead of specifying each view
     url(r'^db/', include('web_db.urls', namespace='db')),
+    # And finally, our endpoints
+    url(r'^api/', include(apipatterns, namespace='api')),
 ]

@@ -1,2 +1,4 @@
 Django==1.11.4
 ipython==6.1.0
+djangorestframework==3.6.4
+ipdb==0.10.3

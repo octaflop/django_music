@@ -38,13 +38,18 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+    'rest_framework'
+]
+
 OUR_APPS = [
     'web_pages',
     'web_app',
-    'web_db'
+    'web_db',
+    'web_endpoints'
 ]
 
-INSTALLED_APPS = DJANGO_APPS + OUR_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + OUR_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
