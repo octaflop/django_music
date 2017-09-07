@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from web_pages.views import basic_web_page
+from web_pages.views import basic_web_page, index_page
 from web_app.views import basic_web_app, dynamic_web_app
 
 apipatterns = [
@@ -24,6 +24,7 @@ apipatterns = [
 ]
 
 urlpatterns = [
+    url(r'^$', index_page, name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^pages/$', basic_web_page),  # the web_pages app. We call the view's callable function
     # the web_app app.
