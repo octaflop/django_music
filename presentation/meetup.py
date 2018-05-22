@@ -4,14 +4,13 @@
 # # Intro to Web Development with Django
 # # Faris Chebib
 
-# ### A basic web page `web_page`
-
+# ### A basic web page `web_page
 # Once django is set up, we can use a simple view to render a template.
 
 # In[5]:
 
-
 from django.shortcuts import render
+
 
 def web_page(request):
     template_name = 'web_page/base.html'
@@ -19,9 +18,8 @@ def web_page(request):
 
 
 # ### A basic web app `web_app`
-
 # That was boring.
-# 
+#
 # Let's do something more interesting...
 
 # In[1]:
@@ -391,4 +389,3 @@ app = App(
 
 if __name__ == '__main__':
     app.main()
-
