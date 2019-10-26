@@ -12,8 +12,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
-REL = lambda * x: os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', *x))  # noqa
 
+def REL(*x):
+    return os.path.abspath(
+        os.path.join(
+            os.path.dirname(__file__),
+            '../../..',
+            *x)
+        )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
